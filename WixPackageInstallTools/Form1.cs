@@ -16,7 +16,7 @@ namespace WixPackageInstallTools
         private string cmd = "heat";
         private string harvestType;//得到类型
         private string soucerFilePath;//源路径
-        private string arguments;//参数
+        private string arguments=" ";//参数
         private string targetFilePath;//目标路径
         public Form1()
         {
@@ -46,10 +46,10 @@ namespace WixPackageInstallTools
                 openFileDialog1.Filter = "所有文件(*.*)|*.*";
                 if (openFileDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    harvestType = "file";
+                    harvestType = "file ";
                     string file = openFileDialog1.FileName;
                     SourceTbx.Text = file;
-                    soucerFilePath = file;
+                    soucerFilePath = file+" ";
                     //MessageBox.Show("已选择文件:" + file, "选择文件提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -57,9 +57,9 @@ namespace WixPackageInstallTools
             {
                 if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
                 {
-                    harvestType = "dir";
+                    harvestType = "dir ";
                     SourceTbx.Text = folderBrowserDialog1.SelectedPath;
-                    soucerFilePath = folderBrowserDialog1.SelectedPath;
+                    soucerFilePath = folderBrowserDialog1.SelectedPath+" ";
                 }
             }
         }
@@ -73,6 +73,7 @@ namespace WixPackageInstallTools
             if (folderBrowserDialog1.ShowDialog() == DialogResult.OK)
             {
                 TargetTbx.Text = folderBrowserDialog1.SelectedPath;
+                targetFilePath= folderBrowserDialog1.SelectedPath;
             }
         }
         /// <summary>
@@ -87,15 +88,17 @@ namespace WixPackageInstallTools
                 MessageBox.Show("请先选好源文件/文件夹和目标文件夹并填写目标文件的名字，然后在点击开始", "提示");
                 return;
             }
-          
-            if (FileRbtn.Checked)
-            {
-                cmd = cmd + harvestType + soucerFilePath.Trim() + arguments + " -out " + targetFilePath.Trim() + TargetNam.Text.Trim();
-            }
-            else if (FolderRbtn.Checked)
-            {
-                cmd = cmd + harvestType + soucerFilePath.Trim() + " -out " + targetFilePath.Trim() + TargetNam.Text.Trim();
-            }
+
+            cmd = "heat " + harvestType + soucerFilePath + arguments + "-out " + targetFilePath + TargetNam.Text.Trim();
+            
+            //if (FileRbtn.Checked)
+            //{
+            //    cmd = cmd + harvestType + soucerFilePath.Trim() + arguments + " -out " + targetFilePath.Trim() + TargetNam.Text.Trim();
+            //}
+            //else if (FolderRbtn.Checked)
+            //{
+            //    cmd = cmd + harvestType + soucerFilePath.Trim() + " -out " + targetFilePath.Trim() + TargetNam.Text.Trim();
+            //}
 
             string output = null;
             cmd = cmd.Trim().TrimEnd('&') + "&exit"; //说明：不管命令是否成功均执行exit命令，否则当调用ReadToEnd()方法时，会处于假死状态
@@ -118,6 +121,7 @@ namespace WixPackageInstallTools
                 p.WaitForExit(); //等待程序执行完退出进程
                 p.Close();
             }
+            MessageBox.Show("生成成功");
         }
 
         private void CgBtn_CheckedChanged(object sender, EventArgs e)

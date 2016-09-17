@@ -152,7 +152,6 @@
             // 
             // TargetTbx
             // 
-            this.TargetTbx.Enabled = false;
             this.TargetTbx.Location = new System.Drawing.Point(7, 20);
             this.TargetTbx.Name = "TargetTbx";
             this.TargetTbx.ReadOnly = true;
