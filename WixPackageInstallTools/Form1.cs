@@ -111,7 +111,7 @@ namespace WixPackageInstallTools
                     p.StandardInput.WriteLine(cmd);
                     p.StandardInput.AutoFlush = true;
                     //获取cmd窗口的输出信息
-                    output = p.StandardOutput.ReadToEnd();
+                    output ="生成时间："+ DateTime.Now.ToString()+"\r"+ p.StandardOutput.ReadToEnd();
                     p.WaitForExit(); //等待程序执行完退出进程
                     p.Close();
                     outputStrings= output.Split(new string[]{"\r\n"}, StringSplitOptions.None);
@@ -187,7 +187,6 @@ namespace WixPackageInstallTools
             {
                 arguments = arguments + "-suid ";
             }
-
 
 
             if (sregCbx.Checked == true)
