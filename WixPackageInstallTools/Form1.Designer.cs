@@ -42,12 +42,14 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.CgTbx = new System.Windows.Forms.TextBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.CgBtn = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.sregCbx = new System.Windows.Forms.CheckBox();
+            this.suidCbx = new System.Windows.Forms.CheckBox();
+            this.cgTbx = new System.Windows.Forms.TextBox();
+            this.ggCbx = new System.Windows.Forms.CheckBox();
+            this.sfragCbx = new System.Windows.Forms.CheckBox();
+            this.cgCbx = new System.Windows.Forms.CheckBox();
+            this.agCbx = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -139,6 +141,7 @@
             this.TargetNam.Name = "TargetNam";
             this.TargetNam.Size = new System.Drawing.Size(328, 21);
             this.TargetNam.TabIndex = 2;
+            this.TargetNam.WordWrap = false;
             // 
             // TargetBtn
             // 
@@ -161,9 +164,9 @@
             // 
             // StartBtn
             // 
-            this.StartBtn.Location = new System.Drawing.Point(633, 37);
+            this.StartBtn.Location = new System.Drawing.Point(546, 37);
             this.StartBtn.Name = "StartBtn";
-            this.StartBtn.Size = new System.Drawing.Size(75, 23);
+            this.StartBtn.Size = new System.Drawing.Size(89, 23);
             this.StartBtn.TabIndex = 3;
             this.StartBtn.Text = "开始";
             this.StartBtn.UseVisualStyleBackColor = true;
@@ -175,90 +178,114 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.checkBox5);
-            this.groupBox3.Controls.Add(this.CgTbx);
-            this.groupBox3.Controls.Add(this.checkBox4);
-            this.groupBox3.Controls.Add(this.checkBox3);
-            this.groupBox3.Controls.Add(this.CgBtn);
-            this.groupBox3.Controls.Add(this.checkBox1);
+            this.groupBox3.Controls.Add(this.sregCbx);
+            this.groupBox3.Controls.Add(this.suidCbx);
+            this.groupBox3.Controls.Add(this.cgTbx);
+            this.groupBox3.Controls.Add(this.ggCbx);
+            this.groupBox3.Controls.Add(this.sfragCbx);
+            this.groupBox3.Controls.Add(this.cgCbx);
+            this.groupBox3.Controls.Add(this.agCbx);
             this.groupBox3.Location = new System.Drawing.Point(28, 230);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(418, 130);
+            this.groupBox3.Size = new System.Drawing.Size(502, 130);
             this.groupBox3.TabIndex = 4;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "参数选择";
             // 
-            // checkBox5
+            // sregCbx
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(7, 108);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(168, 16);
-            this.checkBox5.TabIndex = 5;
-            this.checkBox5.Text = "为每个组件生成唯一表示Id";
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.sregCbx.AutoSize = true;
+            this.sregCbx.Location = new System.Drawing.Point(228, 105);
+            this.sregCbx.Name = "sregCbx";
+            this.sregCbx.Size = new System.Drawing.Size(174, 16);
+            this.sregCbx.TabIndex = 6;
+            this.sregCbx.Text = "DLL文件禁止生成注册表形式";
+            this.sregCbx.UseVisualStyleBackColor = true;
             // 
-            // CgTbx
+            // suidCbx
             // 
-            this.CgTbx.Enabled = false;
-            this.CgTbx.Location = new System.Drawing.Point(170, 44);
-            this.CgTbx.Name = "CgTbx";
-            this.CgTbx.Size = new System.Drawing.Size(100, 21);
-            this.CgTbx.TabIndex = 4;
-            this.CgTbx.WordWrap = false;
+            this.suidCbx.AutoSize = true;
+            this.suidCbx.Location = new System.Drawing.Point(228, 64);
+            this.suidCbx.Name = "suidCbx";
+            this.suidCbx.Size = new System.Drawing.Size(168, 16);
+            this.suidCbx.TabIndex = 5;
+            this.suidCbx.Text = "为每个组件生成唯一表示Id";
+            this.suidCbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // cgTbx
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(7, 87);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(132, 16);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "为每个组件生产guid";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.cgTbx.Enabled = false;
+            this.cgTbx.Location = new System.Drawing.Point(390, 21);
+            this.cgTbx.Name = "cgTbx";
+            this.cgTbx.Size = new System.Drawing.Size(100, 21);
+            this.cgTbx.TabIndex = 4;
+            this.cgTbx.WordWrap = false;
             // 
-            // checkBox3
+            // ggCbx
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(7, 67);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(132, 16);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "只生成一个Fragment";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ggCbx.AutoSize = true;
+            this.ggCbx.Location = new System.Drawing.Point(6, 64);
+            this.ggCbx.Name = "ggCbx";
+            this.ggCbx.Size = new System.Drawing.Size(156, 16);
+            this.ggCbx.TabIndex = 3;
+            this.ggCbx.Text = "为每个文件生成唯一guid";
+            this.ggCbx.UseVisualStyleBackColor = true;
+            this.ggCbx.CheckedChanged += new System.EventHandler(this.ggCbx_CheckedChanged);
             // 
-            // CgBtn
+            // sfragCbx
             // 
-            this.CgBtn.AutoSize = true;
-            this.CgBtn.Location = new System.Drawing.Point(7, 44);
-            this.CgBtn.Name = "CgBtn";
-            this.CgBtn.Size = new System.Drawing.Size(156, 16);
-            this.CgBtn.TabIndex = 1;
-            this.CgBtn.Text = "设置ComponentGroup名称";
-            this.CgBtn.UseVisualStyleBackColor = true;
-            this.CgBtn.CheckedChanged += new System.EventHandler(this.CgBtn_CheckedChanged);
+            this.sfragCbx.AutoSize = true;
+            this.sfragCbx.Location = new System.Drawing.Point(6, 105);
+            this.sfragCbx.Name = "sfragCbx";
+            this.sfragCbx.Size = new System.Drawing.Size(132, 16);
+            this.sfragCbx.TabIndex = 2;
+            this.sfragCbx.Text = "只生成一个Fragment";
+            this.sfragCbx.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // cgCbx
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(7, 21);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(138, 16);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "自动生成组件Guid[*]";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.cgCbx.AutoSize = true;
+            this.cgCbx.Location = new System.Drawing.Point(228, 21);
+            this.cgCbx.Name = "cgCbx";
+            this.cgCbx.Size = new System.Drawing.Size(156, 16);
+            this.cgCbx.TabIndex = 1;
+            this.cgCbx.Text = "设置ComponentGroup名称";
+            this.cgCbx.UseVisualStyleBackColor = true;
+            this.cgCbx.CheckedChanged += new System.EventHandler(this.cgCbx_CheckedChanged);
+            // 
+            // agCbx
+            // 
+            this.agCbx.AutoSize = true;
+            this.agCbx.Location = new System.Drawing.Point(7, 21);
+            this.agCbx.Name = "agCbx";
+            this.agCbx.Size = new System.Drawing.Size(150, 16);
+            this.agCbx.TabIndex = 0;
+            this.agCbx.Text = "为每个文件生成Guid[*]";
+            this.agCbx.UseVisualStyleBackColor = true;
+            this.agCbx.CheckedChanged += new System.EventHandler(this.agCbx_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(546, 108);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "查看输出信息";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(720, 396);
+            this.ClientSize = new System.Drawing.Size(760, 396);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.StartBtn);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Wix-XML代码生成工具";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -285,12 +312,14 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox CgTbx;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox CgBtn;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.TextBox cgTbx;
+        private System.Windows.Forms.CheckBox ggCbx;
+        private System.Windows.Forms.CheckBox sfragCbx;
+        private System.Windows.Forms.CheckBox cgCbx;
+        private System.Windows.Forms.CheckBox agCbx;
+        private System.Windows.Forms.CheckBox suidCbx;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.CheckBox sregCbx;
     }
 }
 
