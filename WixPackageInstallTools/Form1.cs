@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-
-
 namespace WixPackageInstallTools
 {
     public partial class Form1 : Form
